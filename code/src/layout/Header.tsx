@@ -11,8 +11,10 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import ThemeDarkSwitch from "@/theme/ThemeDarkSwitch";
+import { LayoutStore } from "./helper/LayoutHelper";
 
 export default function Header() {
+  let { maxWidth_CONST } = LayoutStore;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
@@ -37,7 +39,7 @@ export default function Header() {
   );
 
   return (
-    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isBordered maxWidth={maxWidth_CONST} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
         {brandLogo}

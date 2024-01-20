@@ -1,3 +1,5 @@
+import PageWrap from "@/layout/PageWrap";
+
 export default function Home() {
-  return <main className="">Hello</main>;
+  return <PageWrap className="">Hello</PageWrap>;
 }
