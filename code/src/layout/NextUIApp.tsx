@@ -19,7 +19,7 @@ export function NextUIApp(props: { children: React.ReactNode | JSX.Element }) {
 
   // 2. Wrap NextUIProvider at the root of your app
   return (
-    <body className={["min-h-screen bg-background text-foreground", mode].join(" ")} style={{ minHeight: "100vh" }}>
+    <body className={["min-h-screen bg-background text-foreground", mode].join(" ")}>
       <NextUIProvider navigate={router.push}>
         <Header></Header>
         {props.children}

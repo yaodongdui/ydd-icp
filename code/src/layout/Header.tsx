@@ -1,14 +1,51 @@
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
 import ThemeDarkSwitch from "@/theme/ThemeDarkSwitch";
 
 export default function Header() {
-  return (
-    <Navbar>
-      <NavbarBrand>
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
+
+  let brandLogo = (
+    <NavbarBrand>
+      <Link color="foreground" href="/">
         <p className="font-bold text-inherit">窑洞对</p>
-      </NavbarBrand>
+      </Link>
+    </NavbarBrand>
+  );
+
+  return (
+    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent className="sm:hidden">
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        {brandLogo}
+      </NavbarContent>
+
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        {brandLogo}
+
         <NavbarItem>
           <Link color="foreground" href="#">
             Features
@@ -25,6 +62,7 @@ export default function Header() {
           </Link>
         </NavbarItem>
       </NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem>
           <ThemeDarkSwitch />
@@ -35,6 +73,21 @@ export default function Header() {
           </Button>
         </NavbarItem>
       </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"}
+              className="w-full"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }
