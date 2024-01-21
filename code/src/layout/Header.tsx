@@ -12,6 +12,7 @@ import {
 } from "@nextui-org/react";
 import ThemeDarkSwitch from "@/theme/ThemeDarkSwitch";
 import { LayoutStore } from "./helper/LayoutHelper";
+import Logo from "./Logo";
 
 export default function Header() {
   let { maxWidth_CONST } = LayoutStore;
@@ -32,6 +33,7 @@ export default function Header() {
 
   let brandLogo = (
     <NavbarBrand>
+      <Logo />
       <Link color="foreground" href="/">
         <p className="font-bold text-inherit">窑洞对</p>
       </Link>
