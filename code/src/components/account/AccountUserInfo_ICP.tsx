@@ -1,6 +1,6 @@
-import { User } from "@junobuild/core";
+import { User } from "@junobuild/core-peer";
 import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
-import { signOut } from "@junobuild/core";
+import { signOut } from "@junobuild/core-peer";
 
 export default function AccountUserInfo_ICP(props: { user: User }) {
   const getShotName = (name: string) => {

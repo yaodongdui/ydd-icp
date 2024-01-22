@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@junobuild/core':
-    specifier: ^0.0.44
-    version: 0.0.44(@dfinity/candid@0.20.2)(@peculiar/webcrypto@1.4.4)
   '@junobuild/core-peer':
     specifier: ^0.0.9
     version: 0.0.9(@dfinity/agent@0.20.2)(@dfinity/auth-client@0.20.2)(@dfinity/identity@0.20.2)(@dfinity/principal@0.20.2)
@@ -252,19 +249,6 @@ packages:
       '@dfinity/identity': 0.20.2(@dfinity/agent@0.20.2)(@dfinity/principal@0.20.2)(@peculiar/webcrypto@1.4.4)
       '@dfinity/principal': 0.20.2
       '@junobuild/utils': 0.0.17(@dfinity/principal@0.20.2)
-    dev: false
-
-  /@junobuild/core@0.0.44(@dfinity/candid@0.20.2)(@peculiar/webcrypto@1.4.4):
-    resolution: {integrity: sha512-otjAUdMueluhglrKtpIQw/rD9XD0vjNnArIgtP62z5PbDWpt+By9RoRRJMx2nbQwGcsouHRQwHthFzPpoVbVzQ==}
-    dependencies:
-      '@dfinity/agent': 0.20.2(@dfinity/candid@0.20.2)(@dfinity/principal@0.20.2)
-      '@dfinity/auth-client': 0.20.2(@dfinity/agent@0.20.2)(@dfinity/identity@0.20.2)(@dfinity/principal@0.20.2)
-      '@dfinity/identity': 0.20.2(@dfinity/agent@0.20.2)(@dfinity/principal@0.20.2)(@peculiar/webcrypto@1.4.4)
-      '@dfinity/principal': 0.20.2
-      '@junobuild/utils': 0.0.17(@dfinity/principal@0.20.2)
-    transitivePeerDependencies:
-      - '@dfinity/candid'
-      - '@peculiar/webcrypto'
     dev: false
 
   /@junobuild/utils@0.0.17(@dfinity/principal@0.20.2):

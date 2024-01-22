@@ -5,7 +5,7 @@ import * as React from "react";
 // 1. import `NextUIProvider` component
 import { NextUIProvider } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-// import Header from "./Header";
+import Header from "./Header";
 import { ThemeDarkHelper, ThemeDarkStore } from "@/theme/ThemeDarkHelper";
 import RenderOnlyClient from "./RenderOnlyClient";
 
@@ -27,7 +27,7 @@ export function NextUIApp(
     <body className={["min-h-screen bg-background text-foreground", mode].join(" ")}>
       <RenderOnlyClient>
         <NextUIProvider navigate={router.push}>
-          {/* <Header></Header> */}
+          <Header></Header>
           {props.children && props.children}
         </NextUIProvider>
       </RenderOnlyClient>
