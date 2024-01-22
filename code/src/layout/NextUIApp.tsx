@@ -5,7 +5,7 @@ import * as React from "react";
 // 1. import `NextUIProvider` component
 import { NextUIProvider } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import Header from "./Header";
+// import Header from "./Header";
 import { ThemeDarkHelper, ThemeDarkStore } from "@/theme/ThemeDarkHelper";
 
 export function NextUIApp(props: { children: React.ReactNode | JSX.Element }) {
@@ -21,7 +21,7 @@ export function NextUIApp(props: { children: React.ReactNode | JSX.Element }) {
   return (
     <body className={["min-h-screen bg-background text-foreground", mode].join(" ")}>
       <NextUIProvider navigate={router.push}>
-        <Header></Header>
+        {/* <Header></Header> */}
         {props.children}
       </NextUIProvider>
     </body>
