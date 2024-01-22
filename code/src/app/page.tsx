@@ -1,5 +1,5 @@
 import PageWrap from "@/layout/PageWrap";
-import JunoHelloWorld from "./JunoHelloWorld";
+import JunoHelloWorld from "../juno/JunoHelloWorld";
 
 export default function Home() {
   return (
