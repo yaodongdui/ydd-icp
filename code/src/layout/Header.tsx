@@ -13,6 +13,7 @@ import {
 import ThemeDarkSwitch from "@/theme/ThemeDarkSwitch";
 import { LayoutStore } from "./helper/LayoutHelper";
 import Logo from "./Logo";
+import LoginButton_ICP from "@/components/account/LoginButton_ICP";
 
 export default function Header() {
   let { maxWidth_CONST } = LayoutStore;
@@ -72,9 +73,10 @@ export default function Header() {
           <ThemeDarkSwitch />
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <LoginButton_ICP />
+          {/* <Button as={Link} color="primary" href="#" variant="flat">
             Login
-          </Button>
+          </Button> */}
         </NavbarItem>
       </NavbarContent>
 

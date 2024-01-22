@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { type Doc, initJuno, setDoc } from "@junobuild/core-peer";
+import { type Doc, initJuno, setDoc } from "@junobuild/core";
 
 type Record = {
   hello: string;
