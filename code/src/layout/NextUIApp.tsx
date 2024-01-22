@@ -7,6 +7,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 // import Header from "./Header";
 import { ThemeDarkHelper, ThemeDarkStore } from "@/theme/ThemeDarkHelper";
+import RenderOnlyClient from "./RenderOnlyClient";
 
 export function NextUIApp(
   props: Readonly<{
@@ -23,11 +24,13 @@ export function NextUIApp(
 
   // 2. Wrap NextUIProvider at the root of your app
   return (
-    <div className={["min-h-screen bg-background text-foreground", mode].join(" ")}>
-      <NextUIProvider navigate={router.push}>
-        {/* <Header></Header> */}
-        {props.children && props.children}
-      </NextUIProvider>
-    </div>
+    <body className={["min-h-screen bg-background text-foreground", mode].join(" ")}>
+      <RenderOnlyClient>
+        <NextUIProvider navigate={router.push}>
+          {/* <Header></Header> */}
+          {props.children && props.children}
+        </NextUIProvider>
+      </RenderOnlyClient>
+    </body>
   );
 }

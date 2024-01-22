@@ -7,35 +7,37 @@ type Record = {
   hello: string;
 };
 
-export default function JunoHelloWorld() {
+export default function JunoHelloWorld(props: {}) {
   const [record, setRecord] = useState<Doc<Record> | undefined>(undefined);
 
   // TODO: Replace 'satelliteId' with your actual satellite ID
   useEffect(() => {
-    (async () =>
-      await initJuno({
-        satelliteId: "swe6d-5yaaa-aaaal-adjdq-cai",
-      }))();
+    // (async () =>
+    //   await initJuno({
+    //     satelliteId: "swe6d-5yaaa-aaaal-adjdq-cai",
+    //   }))();
   }, []);
 
-  const insert = async () => {
-    const doc = await setDoc({
-      collection: "demo",
-      doc: {
-        key: `my-key-${new Date().getTime()}`,
-        data: {
-          hello: "world",
-        },
-      },
-    });
+  return <div>6666</div>;
 
-    setRecord(doc);
-  };
+  // const insert = async () => {
+  //   const doc = await setDoc({
+  //     collection: "demo",
+  //     doc: {
+  //       key: `my-key-${new Date().getTime()}`,
+  //       data: {
+  //         hello: "world",
+  //       },
+  //     },
+  //   });
 
-  return (
-    <>
-      <button onClick={insert}>Insert a document</button>
-      {record !== undefined && <span>Key: {record.key}</span>}
-    </>
-  );
+  //   setRecord(doc);
+  // };
+
+  // return (
+  //   <>
+  //     <button onClick={insert}>Insert a document</button>
+  //     {record !== undefined && <span>Key: {record.key}</span>}
+  //   </>
+  // );
 }
