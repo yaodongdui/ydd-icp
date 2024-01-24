@@ -41,7 +41,7 @@ export default function LoginButton_ICP() {
             // provider: new InternetIdentityProvider({}),
             provider: new NFIDProvider({
               appName: "窑洞对",
-              logoUrl: "https://somewhere.com/your_logo.png",
+              logoUrl: "https://www.ydd.plus/ydd.png",
             }),
           });
         }}
