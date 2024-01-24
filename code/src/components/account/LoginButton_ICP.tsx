@@ -12,15 +12,15 @@ export default function LoginButton_ICP() {
   const [initLoading, setInitLoading] = useState(true);
   const [user, setUser] = useState<User | null>();
   useEffect(() => {
-    // JunoHelper.init();
-    // const unsubscribe = authSubscribe((user: User | null) => {
-    //   setInitLoading(false);
-    //   setUser(user);
-    //   console.log("User:", user);
-    // });
-    // return () => {
-    //   unsubscribe();
-    // };
+    JunoHelper.init();
+    const unsubscribe = authSubscribe((user: User | null) => {
+      setInitLoading(false);
+      setUser(user);
+      console.log("User:", user);
+    });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   if (initLoading) {
