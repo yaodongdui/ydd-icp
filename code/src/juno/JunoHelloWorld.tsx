@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { type Doc, setDoc, listDocs, ListResults } from "@junobuild/core-peer";
 import { nanoid } from "nanoid";
+import { AccountICP_Store } from "@/helper/AccountICPHelper";
 
 type Record = {
   hello: string;
@@ -11,6 +12,7 @@ type Record = {
 export default function JunoHelloWorld(props: {}) {
   const [record, setRecord] = useState<Doc<Record> | undefined>(undefined);
   const [list, setList] = useState<ListResults<Doc<Record>> | undefined>(undefined);
+  const { user } = AccountICP_Store;
 
   let reload = async () => {
     let res = await listDocs<Record>({
@@ -25,10 +27,11 @@ export default function JunoHelloWorld(props: {}) {
     const doc = await setDoc({
       collection: "demo",
       doc: {
-        key: `my-key-${new Date().getTime()}`,
+        key: nanoid(),
         data: {
-          hello: "world",
+          hello: "测试中文2",
         },
+        owner: user?.key,
       },
     });
 
