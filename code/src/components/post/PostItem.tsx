@@ -1,9 +1,11 @@
 "use client";
 
+import { Doc } from "@junobuild/core-peer";
 import { Avatar, Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { useState } from "react";
+import { PostBean } from "./PostTextarea";
 
-export default function PostItem() {
+export default function PostItem({ doc }: { doc: Doc<PostBean> }) {
   const [isFollowed, setIsFollowed] = useState(false);
 
   return (

@@ -1,6 +1,10 @@
 import React from "react";
 import { Button, Textarea } from "@nextui-org/react";
 
+export type PostBean = {
+  content: string;
+};
+
 export default function PostTextarea() {
   return (
     <div>
