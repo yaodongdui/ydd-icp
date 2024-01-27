@@ -10,7 +10,7 @@ export default function PostList() {
 
   let reload = async () => {
     let res = await listDocs<PostBean>({
-      collection: "demo",
+      collection: "post",
       filter: {},
     });
     console.log("result", res);

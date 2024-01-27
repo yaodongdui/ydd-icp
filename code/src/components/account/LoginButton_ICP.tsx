@@ -10,14 +10,12 @@ import { JunoHelper } from "@/juno/JunoHelper";
 import { AccountICPHelper, AccountICP_Store } from "@/helper/AccountICPHelper";
 
 export default function LoginButton_ICP() {
-  const [initLoading, setInitLoading] = useState(true);
-  const { user } = AccountICP_Store;
+  const { user, userLoading } = AccountICP_Store;
 
   useEffect(() => {
     JunoHelper.init();
     AccountICPHelper.setLoading(true);
     const unsubscribe = authSubscribe((user: User | null) => {
-      setInitLoading(false);
       AccountICPHelper.setUser(user);
       console.log("User:", user);
     });
@@ -26,7 +24,7 @@ export default function LoginButton_ICP() {
     };
   }, []);
 
-  if (initLoading) {
+  if (userLoading) {
     return <Button isLoading={true}></Button>;
   }
   if (user) {
