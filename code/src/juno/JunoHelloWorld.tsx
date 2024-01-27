@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { type Doc, setDoc, listDocs, ListResults } from "@junobuild/core-peer";
+import { nanoid } from "nanoid";
 
 type Record = {
   hello: string;
@@ -14,6 +15,7 @@ export default function JunoHelloWorld(props: {}) {
   let reload = async () => {
     let res = await listDocs<Record>({
       collection: "demo",
+      filter: {},
     });
     console.log("result", res);
     setList(res);
@@ -35,6 +37,7 @@ export default function JunoHelloWorld(props: {}) {
   };
 
   useEffect(() => {
+    console.log("nanoid6666", nanoid());
     reload();
   }, []);
 

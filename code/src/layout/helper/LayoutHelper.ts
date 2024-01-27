@@ -25,8 +25,8 @@ let MAX_WIDTH_CONFIG = {
 type KEYS = keyof typeof MAX_WIDTH_CONFIG;
 
 export const LayoutStore = resso({
-  maxWidth_CONST: "" as KEYS,
-  maxWidth_tailwindclass: "",
+  maxWidth_CONST: "lg" as KEYS,
+  maxWidth_tailwindclass: MAX_WIDTH_CONFIG.lg.wrapper,
 });
 
 export const LayoutHelper = {

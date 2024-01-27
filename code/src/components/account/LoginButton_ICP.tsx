@@ -7,15 +7,18 @@ import { useEffect, useState } from "react";
 import AccountUserInfo_ICP from "./AccountUserInfo_ICP";
 import { Button } from "@nextui-org/react";
 import { JunoHelper } from "@/juno/JunoHelper";
+import { AccountICPHelper, AccountICP_Store } from "@/helper/AccountICPHelper";
 
 export default function LoginButton_ICP() {
   const [initLoading, setInitLoading] = useState(true);
-  const [user, setUser] = useState<User | null>();
+  const { user } = AccountICP_Store;
+
   useEffect(() => {
     JunoHelper.init();
+    AccountICPHelper.setLoading(true);
     const unsubscribe = authSubscribe((user: User | null) => {
       setInitLoading(false);
-      setUser(user);
+      AccountICPHelper.setUser(user);
       console.log("User:", user);
     });
     return () => {
