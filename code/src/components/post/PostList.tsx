@@ -6,7 +6,7 @@ import PostItem from "./PostItem";
 import { PostBean } from "./PostTextarea";
 import { Skeleton } from "@nextui-org/react";
 
-export default function PostList() {
+export default function PostList({ reloadAt = 0 }: { reloadAt: number }) {
   const [loading, setLoading] = useState(true);
   const [list, setList] = useState<ListResults<Doc<PostBean>> | undefined>(undefined);
 
@@ -23,7 +23,7 @@ export default function PostList() {
 
   useEffect(() => {
     reload();
-  }, []);
+  }, [reloadAt]);
 
   if (loading) {
     return (

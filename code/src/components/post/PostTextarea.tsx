@@ -10,7 +10,7 @@ export type PostBean = {
   content: string;
 };
 
-export default function PostTextarea() {
+export default function PostTextarea(props: { onPostDone?: () => void }) {
   const [text, setText] = useState("");
   const { user } = AccountICP_Store;
   useEffect(() => {}, [user]);
@@ -26,6 +26,7 @@ export default function PostTextarea() {
         owner: user?.key,
       },
     });
+    props.onPostDone && props.onPostDone();
   };
 
   return (
@@ -44,6 +45,7 @@ export default function PostTextarea() {
           color="primary"
           isDisabled={!user}
           onClick={async () => {
+            // props.onPostDone && props.onPostDone();
             await insert();
             setText("");
           }}
