@@ -8,7 +8,6 @@ export default function PageWrap(props: { children: React.ReactNode; className?:
         // max-w-[1536px] 是限制 PC 端大屏, max-w-[100vw] 是限制移动端不要把容器撑宽.
         className={["w-full px-6 pt-6", maxWidth_tailwindclass, props.className].join(" ")}
       >
-        {maxWidth_tailwindclass}
         {props.children}
       </div>
     </div>
