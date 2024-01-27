@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Header from "./Header";
 import { ThemeDarkHelper, ThemeDarkStore } from "@/theme/ThemeDarkHelper";
 import RenderOnlyClient from "./RenderOnlyClient";
+import Footer from "./Footer";
 
 export function NextUIApp(
   props: Readonly<{
@@ -29,6 +30,7 @@ export function NextUIApp(
         <NextUIProvider navigate={router.push}>
           <Header></Header>
           {props.children && props.children}
+          <Footer />
         </NextUIProvider>
       </RenderOnlyClient>
     </body>
