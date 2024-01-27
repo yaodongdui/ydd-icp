@@ -19,18 +19,7 @@ export default function Header() {
   let { maxWidth_CONST } = LayoutStore;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const menuItems = ["暴论", "论据", "作品", "传承"];
 
   let brandLogo = (
     <NavbarBrand>
@@ -51,19 +40,22 @@ export default function Header() {
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         {brandLogo}
 
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link href="/">暴论</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#" aria-current="page">
+            论据
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Integrations
+            作品
+          </Link>
+        </NavbarItem>
+        <NavbarItem title="开宗立派">
+          <Link color="foreground" href="#">
+            传承
           </Link>
         </NavbarItem>
       </NavbarContent>
